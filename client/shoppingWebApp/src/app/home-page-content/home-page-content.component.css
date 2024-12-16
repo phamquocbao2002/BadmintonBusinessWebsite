@@ -1,0 +1,285 @@
+.homepage-content {
+    text-align: center;
+}
+
+.contentContainer {
+    /* padding: 50px;
+    border: 1px solid rgba(100, 99, 99, 0.2); 
+    margin-top: 50px; */
+    /* padding: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); 
+    margin-top: 50px;
+    background-color: white; */
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    /* Bo tròn góc để mềm mại */
+    background: white;
+    /* Hiệu ứng nền gradient để tạo cảm giác nổi */
+    /* Một chút viền outline nhẹ */
+    outline-offset: 0px;
+    /* Đặt viền gần hơn với container */
+}
+
+
+.product-catalog {
+    margin-bottom: 40px;
+    text-align: center;
+    display: block;
+    width: 50%;
+}
+
+.product-catalog h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+    /* right: 40%;
+    left: 40%; */
+    gap: 30px;
+    /* text-align: center; */
+    right: 25%;
+    left: 25%;
+    display: flex;
+}
+
+.product-item {
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+.product-item img {
+    width: auto;
+    height: 230px;
+    border-radius: 8px;
+    object-fit: cover;
+    /* Ensures the image scales properly to fit the container */
+    transition: transform 0.3s ease;
+    /* Adds smooth scaling transition */
+}
+
+.product-item img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    /* Slightly enlarges the image when hovered */
+}
+
+
+.customer-review-section {
+    /* display: flex; */
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    display: block
+}
+
+.review-container {
+    top: 100px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+
+}
+
+.changeReviewbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.review {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(255, 102, 0, 0.7);
+    margin: 0 20px;
+}
+
+.rating {
+    color: #FFD700;
+}
+
+.star {
+    font-size: 1.5rem;
+}
+
+.star.filled {
+    color: #FFD700;
+}
+
+.review-date {
+    font-style: italic;
+    color: #777;
+}
+
+.product-image {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #28a745;
+}
+
+.product-description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-rating {
+    font-size: 18px;
+}
+
+.detail-image {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.detail-image:hover {
+    border: 2px solid #007bff;
+    /* Highlight on hover */
+}
+
+
+.menu-icon {
+    width: 24px;
+    /* Kích thước icon */
+    height: 24px;
+    border: 1px solid #ccc;
+    /* Viền xung quanh icon */
+    border-radius: 50%;
+    /* Bo tròn icon */
+    padding: 5px;
+    display: block;
+}
+
+.menu-icon:hover {
+    background-color: #f0f0f0;
+    /* Màu nền khi hover */
+}
+
+.onItemCartIcon {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    background-color: #FF6600;
+    width: auto;
+    height: auto;
+    border: 1px
+}
+
+.onItemCartIcon:hover {
+    background-color: #FF6600;
+    transform: scale(1.2);
+}
+
+.itemTitle:hover {
+    color: #FF6600;
+}
+
+.price {
+    color: red;
+}
+
+.productDisplayContainer {
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+
+.productImgContainer {
+    /* overflow: hidden; */
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.productDisplayContainer:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    /* Tạo bóng cho hộp khi hover */
+    transition: box-shadow 0.2s ease;
+    /* Hiệu ứng chuyển mượt */
+}
+
+.navigation-buttons {
+    height: 40px;
+    background-color: #f0f0f0;
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+
+.navigation-buttons:hover {
+    background-color: #FF6600;
+    color: white;
+}
+
+.productDisplayTitle {
+    font-size: 24px;
+    /* Kích thước chữ lớn hơn để tiêu đề nổi bật */
+    font-weight: bold;
+    /* Tạo cảm giác mạnh mẽ với chữ đậm */
+    color: #FF6600;
+    /* Màu chữ theo chủ đạo */
+    background-color: #fff3e0;
+    /* Màu nền nhạt để làm nổi bật chữ */
+    padding: 10px 20px;
+    /* Khoảng cách giữa chữ và viền */
+    border: 2px solid #FF6600;
+    /* Viền có màu chủ đạo */
+    border-radius: 8px;
+    /* Bo góc mềm mại */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng để tạo hiệu ứng nổi */
+    text-align: center;
+    /* Canh giữa chữ */
+    display: inline-block;
+    /* Hiển thị inline-block để tránh chiếm toàn bộ chiều rộng */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Hiệu ứng khi hover */
+    margin-bottom: 50px;
+}
+
+.productDisplayTitle:hover {
+    transform: scale(1.05);
+    /* Phóng to nhẹ khi hover */
+    background-color: #ffe0b3;
+    /* Thay đổi màu nền khi hover */
+    cursor: pointer;
+}
+
+.productImage {
+    transition: transform 0.2s ease-in-out;
+}
+
+.productImage.zoomed {
+    transform: scale(1.2);
+    /* Zoom ảnh lên 1.2 lần */
+}

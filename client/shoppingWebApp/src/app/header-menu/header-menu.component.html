@@ -1,0 +1,56 @@
+<div style="position: fixed; z-index: 99999; width: 100%;">
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg" style="width: 100%;">
+    <div class="container" style="width: 100%;">
+      <a class="navbar-brand" href="#"><img src="/image/image copy 4.png" alt="" width="50px" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="goToHomePage()">Trang chủ</a>
+          </li>
+
+          <!-- Dropdown Master Menu for "Sản phẩm" -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button">
+              Sản phẩm
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item" href="#" (click)="goToMainProductsSection()">Vợt</a></li>
+              <li><a class="dropdown-item" href="#" (click)="goToAccessoryProductsSection()">Phụ kiện</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="goToStorePointsPage()">Cửa hàng</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="goToContactPage()">Liên hệ</a>
+          </li>
+        </ul>
+        <div class="menu-icons">
+          <a href="#" class="icon-link">
+            <img src="/search.png" alt="Tìm kiếm" class="menu-icon" style="width: auto; height: auto;">
+          </a>
+          <a href="#" class="icon-link">
+            <img src="/account.png" alt="Tài khoản" class="menu-icon" style="width: auto; height: auto;">
+          </a>
+          <a class="btn header-btn" style="width: 150px; text-align: center; position: relative;"
+            (click)="goToCartReview()">
+            <img src="/cart.png" style="width: 20px; height: 20px; margin-right: 8px;">
+            Giỏ hàng
+            <span class="cart-count" *ngIf="cartProductsQty > 0">{{ cartProductsQty }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</div>

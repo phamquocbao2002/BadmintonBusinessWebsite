@@ -1,0 +1,204 @@
+/* CSS chung cho form thanh toán */
+#orderInfoInputFields {
+  width: 60%;
+  float: left;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 40px;
+}
+
+#payMethodChosenSection {
+  width: 35%;
+  float: right;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Căn chỉnh các ô input của phần thông tin đặt hàng */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* CSS cho phần hiển thị tổng đơn hàng */
+#reviewOrderTotalAmt {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#reviewOrderProducts {
+  margin-bottom: 20px;
+}
+
+/* CSS cho phương thức thanh toán */
+#payMethodChosen {
+  margin-top: 20px;
+}
+
+#payMethodChosen label {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+#payMethodChosen button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffc107;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#payMethodChosen button:hover {
+  background-color: #e0a800;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#reviewOrderProducts {
+  width: 100%;
+}
+
+.product-lineOnCheckout {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.product-lineOnCheckout.header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.product-nameOnCheckout,
+.product-amountOnCheckout {
+  width: 50%;
+  text-align: left;
+}
+
+.product-amountOnCheckout {
+  text-align: right;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  /* Makes the font slightly larger */
+  font-weight: bold;
+  /* Emphasizes the text */
+  color: #FF6600;
+  /* Dark grey color for readability */
+  text-align: center;
+  /* Centers the text */
+  margin-bottom: 20px;
+  /* Adds space below the title */
+  letter-spacing: 1px;
+  /* Adds a little spacing between letters */
+
+}
+
+/* CSS cho modal */
+.modal-qr-code {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-qr-code img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.modal-qr-code h2 {
+  color: #FF6600;
+  /* Màu chủ đạo */
+  margin-bottom: 20px;
+}
+
+.modal-qr-code .countdown {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.modal-qr-code .countdown span#second {
+  color: red;
+}
+
+.modal-qr-code .countdown span#minute {
+  color: green;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

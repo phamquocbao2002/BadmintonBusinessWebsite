@@ -1,0 +1,181 @@
+.container.cart-review-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-section {
+    margin-bottom: 20px;
+}
+
+.product-line {
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.product-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.customer-delivery-info {
+    margin-top: 20px;
+}
+
+.customer-info,
+.delivery-info {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.customer-info p,
+.delivery-info p {
+    margin: 5px 0;
+    word-break: break-word;
+    /* Ensure long text wraps inside the container */
+    word-wrap: break-word;
+}
+
+.order-master-data {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.order-master-data p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.order-master-data i {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+.product-lineOnCheckout {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.product-lineOnCheckout.header {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.product-nameOnCheckout,
+.product-amountOnCheckout {
+    width: 50%;
+    text-align: left;
+}
+
+.product-amountOnCheckout {
+    text-align: right;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    /* Makes the font slightly larger */
+    font-weight: bold;
+    /* Emphasizes the text */
+    color: #FF6600;
+    /* Dark grey color for readability */
+    text-align: center;
+    /* Centers the text */
+    margin-bottom: 20px;
+    /* Adds space below the title */
+    letter-spacing: 1px;
+    /* Adds a little spacing between letters */
+
+}
+
+#turnBackToHomePage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px; /* Cỡ chữ to vừa */
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* Màu nền nhẹ */
+    border-radius: 5px; /* Bo góc cho phần */
+    width: fit-content;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng */
+}
+
+#turnBackToHomePage span {
+    font-weight: 600;
+    color: #333; /* Màu chữ */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+#turnBackToHomePage:hover {
+    background-color: #007bff; /* Màu nền khi hover */
+    color: #fff; /* Màu chữ khi hover */
+}
+
+#turnBackToHomePage:hover span {
+    color: #fff; /* Màu chữ của span khi hover */
+}
+
+#turnBackToHomePage span::before {
+    content: "\2190"; /* Mũi tên quay về */
+    margin-right: 10px;
+    font-size: 20px; /* Cỡ mũi tên */
+    color: #007bff; /* Màu mũi tên */
+}
+
+#turnBackToHomePage:hover span::before {
+    color: #fff; /* Đổi màu mũi tên khi hover */
+}
+
+/* Thêm khoảng cách giữa các dòng thông tin */
+.orther-info-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd; /* Thêm đường kẻ mờ phía dưới mỗi dòng */
+  }
+  
+  .orther-info-line b {
+    font-weight: bold;
+    color: #333; /* Màu chữ của key */
+  }
+  
+  .orther-info-line i {
+    color: #555; /* Màu chữ của value */
+    font-style: normal; /* Giữ kiểu chữ bình thường để dễ đọc */
+  }
+  
+  /* Khoảng cách giữa các phần thông tin */
+  .orther-info-container {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd; /* Thêm đường viền nhẹ bao quanh */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Tô nền nhạt cho phần thông tin thêm */
+  }
+  

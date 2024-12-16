@@ -1,0 +1,57 @@
+<div class="container cart-review-container" style="position: relative;">
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table cart-table">
+                <thead>
+                    <tr>
+                        <th>SẢN PHẨM</th>
+                        <th>GIÁ</th>
+                        <th>SỐ LƯỢNG</th>
+                        <th>TẠM TÍNH</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of getCurrentPageItems(); let i = index">
+                        <td>
+                            <img [src]="item.mainImageURL" alt="Product Image" class="product-img">
+                            <span>{{ item.productName }}</span>
+                        </td>
+                        <td>{{ item.unitPrice | currency: 'VND' }}</td>
+                        <td>
+                            <button class="btn btn-light" (click)="decreaseQty(i)">-</button>
+                            <input type="number" [(ngModel)]="item.quantity" class="quantity-input" readonly>
+                            <button class="btn btn-light" (click)="increaseQty(i)">+</button>
+                        </td>
+                        <td>{{ getTotalPrice(item) | currency: 'VND' }}</td>
+                        <td>
+                            <button (click)="removeItem(i, item.quantity)" style="border: none; background: none;">
+                                <img src="/trash.png" alt="" width="30px" height="30px">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <div class="pagination-buttons">
+                    <button class="btn btn-secondary" (click)="prevPage()" [disabled]="currentPage === 0">Prev</button>
+                    <button class="btn btn-secondary" (click)="nextPage()" [disabled]="(currentPage + 1) * itemsPerPage >= cartItems.length">Next</button>
+                </div>
+                
+            </table>
+            <button class="btn btn-secondary" (click)="goToHomePage()"><– TIẾP TỤC XEM SẢN PHẨM</button>
+        </div>
+
+        <div class="col-md-2 cart-summary">
+            <h4>CỘNG GIỎ HÀNG</h4>
+            <p>Tạm tính: {{ subTotal | currency: 'VND' }}</p>
+            <p>Giao hàng miễn phí</p>
+            <p>Tổng: {{ grandTotal | currency: 'VND' }}</p>
+            <button class="btn btn-warning" (click)="goToCheckoutPage()">ĐẶT HÀNG</button>
+
+            <div class="coupon-container">
+                <input type="text" class="form-control" placeholder="Mã ưu đãi">
+                <button class="btn btn-secondary">ÁP DỤNG</button>
+            </div>
+        </div>
+    </div>
+</div>

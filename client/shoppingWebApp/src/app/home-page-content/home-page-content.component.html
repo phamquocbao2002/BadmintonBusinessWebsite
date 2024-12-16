@@ -1,0 +1,47 @@
+<div class="homepage-content">
+    <div class="contentContainer" style="text-align: center;">
+        <!-- productCatalog Section -->
+        <h2 style="margin-bottom: 50px;">Danh mục sản phẩm</h2>
+        <div class="product-grid">
+            <div class="product-item" *ngFor="let productCategory of productCategoryList">
+                <img [src]="productCategory.image" alt="{{ productCategory.name }}" style="margin-bottom: 50px;" />
+                <p class="productDisplayTitle">{{ productCategory.name }}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- productsDisplaying Section -->
+    <div class="contentContainer">
+        <app-main-products-section></app-main-products-section>
+    </div>
+
+    <div class="contentContainer">
+        <!-- accessory products Section -->
+        <app-accessory-products-section></app-accessory-products-section>
+    </div>
+
+    <!-- customerReview Section -->
+
+    <div class="customer-review-section contentContainer">
+        <h2>Đánh giá từ khách hàng</h2>
+        <br><br>
+        <div class="review-container">
+            <button class="changeReviewbtn" (click)="prevReview()">&#10094;</button>
+
+            <div class="review" *ngFor="let review of displayedReviews">
+                <img [src]="review.img" alt="Customer Avatar">
+                <br>
+                <br>
+                <h3>{{ review.name }}</h3>
+                <p>"{{ review.comment }}"</p>
+                <div class="rating">
+                    <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" class="star"
+                        [class.filled]="i < review.rating">&#9733;</span>
+                </div>
+                <p class="review-date">{{ review.date }}</p>
+            </div>
+            <button class="changeReviewbtn" (click)="nextReview()">&#10095;</button>
+        </div>
+    </div>
+</div>

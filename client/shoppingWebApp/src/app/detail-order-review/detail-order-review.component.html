@@ -1,0 +1,68 @@
+<div class="container cart-review-container">
+    <div class="row">
+        <!-- Product Review Section -->
+        <div id="orderProductsDetailData" class="col-md-6">
+            <div id="reviewOrderProducts" class="product-section">
+                <p class="sectionTitle">THÔNG TIN ĐƠN ĐẶT HÀNG</p>
+                <div class="product-lineOnCheckout header">
+                    <div class="product-nameOnCheckout">Sản phẩm</div>
+                    <div class="product-amountOnCheckout">Tổng</div>
+                </div>
+
+                <!-- Loop through the orderCheckoutProducts to display product details -->
+                <div *ngFor="let product of productDetails" class="product-lineOnCheckout">
+                    <div class="product-nameOnCheckout">{{ product.ProductNameWithQuantity }}</div>
+                    <div class="product-amountOnCheckout">{{ product.productAmt | currency:'VND':'symbol':'1.0-0' }}
+                    </div>
+                </div>
+
+                <!-- Thông báo nếu không có sản phẩm -->
+                <ng-template #noProducts>
+                    <div>Không có sản phẩm nào trong đơn hàng.</div>
+                </ng-template>
+            </div>
+
+            <!-- Customer and Delivery Information Section -->
+            <div id="orderDeliveryData" class="customer-delivery-info">
+                <div id="customerInfo" class="customer-info">
+                    <div>Thông tin khách hàng</div>
+                    <div>
+                        <p>Khách hàng: <i>{{ confirmedOrderInfo.customerAccountName || 'N/A' }}</i></p>
+                    </div>
+                </div>
+
+                <div id="deliveryInfo" class="delivery-info">
+                    <div>THÔNG TIN GIAO HÀNG</div>
+                    <div>
+                        <p>Địa chỉ giao hàng: {{ confirmedOrderInfo.receiverAddress || 'N/A' }}</p>
+                        <p>Số điện thoại người nhận: {{ confirmedOrderInfo.receiverPhoneNumber || 'N/A' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Master Data Section -->
+        <div id="orderMasterData" class="col-md-6 order-master-data">
+            <div>
+                <p><i>{{ confirmedOrderInfo.confirmedStatus || 'N/A' }}</i></p>
+                <p>. Mã đơn hàng: <i>{{ confirmedOrderInfo.orderId || 'N/A' }}</i></p>
+                <p>. Ngày đặt: <i>{{ confirmedOrderInfo.orderDate || 'N/A' }}</i></p>
+                <p>. Tổng tiền: <i>{{ confirmedOrderInfo.orderAmt | currency:'VND':'symbol':'1.0-0' || 'N/A' }}</i></p>
+                <p>. Phương thức thanh toán: <i>{{ confirmedOrderInfo.payMethod || 'N/A' }}</i></p>
+                <p>. Trạng thái thanh toán: <i>{{ confirmedOrderInfo.paymentStatus || 'N/A' }}</i></p>
+                <div class="orther-info-container" *ngIf="getOrtherInfoEntries().length > 0">
+                    <div *ngFor="let entry of getOrtherInfoEntries()" class="orther-info-line">
+                        <b>{{ entry[0] }}:</b> <i>{{ entry[1] }}</i>
+                    </div>
+                </div>
+                <p *ngIf="getOrtherInfoEntries().length === 0">
+                    Không có thông tin thêm
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row" id="turnBackToHomePage" (click)="goToHomePage()">
+
+        << Quay về trang chủ </div>
+    </div>

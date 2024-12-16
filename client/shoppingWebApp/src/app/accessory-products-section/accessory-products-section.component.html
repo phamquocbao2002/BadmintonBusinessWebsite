@@ -1,0 +1,62 @@
+<div class="homepage-content">
+    <div class="container my-4" id="accessoryProductsContentContainer">
+        <div class="productDisplayTitle">Phụ kiện</div>
+        <div class="row">
+            <!-- section banner đại diện cho loại -->
+            <div class="col-md-4 accessoryProductsContentContainer">
+                <div class="card accessoryProductsContent">
+                    <img src="/phukien/ao/ao1.jpg" class="card-img-top" style="height: 470px;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Áo</h5>
+                        <button id="prevChangeDisplayedAccessory" class="changeDisplayedAccessoryBtn"
+                            (click)="changeAccessoryType('Áo')">Áo</button>
+                        <button id="prevChangeDisplayedAccessory" class="changeDisplayedAccessoryBtn"
+                            (click)="changeAccessoryType('Balo')">Balo</button>
+                        <button id="prevChangeDisplayedAccessory" class="changeDisplayedAccessoryBtn"
+                            (click)="changeAccessoryType('Giày')">Giày</button>
+                        <p class="card-text">Badminton rackets</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- section hiển thị sản phẩm wrrsdsd5345-->
+
+            <div class="col-md-8" id="accessoryProductsDisplayContainer">
+                <div class="row">
+                    <div *ngFor="let product of currentAccessoryProducts" class="col-4 mb-3">
+                        <div class="productDisplayContainer" [id]="product.productId"
+                            (mouseenter)="onMouseEnter(product.productId)"
+                            (mouseleave)="onMouseLeave(product.productId)">
+                            <div class="productImgContainer" style="background-color: white;">
+                                <img [src]="product.mainImageURL" class="productImage"
+                                    [ngClass]="{'zoomed': hoveredProductId === product.productId}"
+                                    style="height: 150px; width: 100px;">
+
+                                <!-- Icon thêm vào khi hover -->
+                                <img *ngIf="hoveredProductId === product.productId" src="/cart.png"
+                                    class="onItemCartIcon menu-icon" style="position: absolute; bottom: 0; right: 0"
+                                    (click)="cartIconClickHandler(product.productId)">
+                            </div>
+                            <div style="height: 100px;">
+                                <p class="card-text itemTitle" style="height: 40%;">{{ product.productName }}</p>
+                                <p class="card-text price" style="height: 40%;">{{ product.unitPrice | currency:
+                                    'VND' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút Previous và Next -->
+                <div class="pagination-controls">
+                    <button (click)="accessoryProductsNextPage()" [disabled]="accessoryProductsCurrentIndex === 0"
+                        class="navigation-buttons">
+                        < </button>
+                            <button (click)="accessoryProductsPreviousPage()"
+                                [disabled]="accessoryProductsCurrentIndex + itemsPerPage >= currentAccessoryProducts.length"
+                                class="navigation-buttons">>
+                            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

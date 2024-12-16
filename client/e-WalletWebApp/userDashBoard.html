@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <img src="avatar.png" alt="Avatar" class="avatar">
+            <ul>
+                <li><a href="#" id="accountInfoBtn">Xem thông tin tài khoản</a></li>
+                <li><a href="#" id="qrCodeBtn">Mã QR</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div style="font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2C3E50; /* Màu chữ đậm hơn */
+            text-align: center; /* Căn giữa nội dung */
+            background-color: #ECF0F1; /* Màu nền sáng */
+            padding: 20px; /* Khoảng cách giữa nội dung và viền */
+            border-radius: 10px; /* Bo góc mềm mại */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ để tạo chiều sâu */
+            margin: 20px auto; /* Căn giữa với lề */
+            width: fit-content; /* Độ rộng tự động theo nội dung */">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN A+ WEB BANK</div>
+            <h2>Thông tin khách hàng</h2>
+            <div id="accountInfo"></div>
+
+            <!-- Modal để hiển thị QR Code -->
+            <div id="qrModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>Chọn phương thức</h3>
+                    <button id="scanQrBtn" disabled>Quét mã QR</button>
+                    <button id="uploadQrBtn">Tải mã QR có sẵn</button>
+                    <input type="file" id="fileInput" style="display: none;" accept="image/*">
+                    <div id="qrResult"></div>
+                </div>
+            </div>
+        </div>
+        <div id="paymentStatusModal" class="modal">
+            <div class="modal-content">
+                <span class="close-payment-status">&times;</span>
+                <p id="paymentStatusText">Trạng thái thanh toán:</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

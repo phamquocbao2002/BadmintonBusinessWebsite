@@ -1,0 +1,53 @@
+<div class="homepage-content">
+    <div class="container my-4" id="mainProductsContentContainer">
+        <div class="productDisplayTitle">Vợt</div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="height: auto;">
+                    <img src="vot.PNG" class="card-img-top" alt="Rackets Banner" style="height: 470px;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">VỢT CẦU LÔNG</h5>
+                        <p class="card-text">Badminton rackets</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div hiển thị sản phẩm -->
+            <div class="col-md-8" id="mainProductsDisplayContainer">
+                <div class="row">
+                    <div *ngFor="let product of getVisibleMainProducts()" class="col-4 mb-3">
+                        <div class="productDisplayContainer" [id]="product.productId"
+                            (mouseenter)="onMouseEnter(product.productId)"
+                            (mouseleave)="onMouseLeave(product.productId)">
+                            <div class="productImgContainer" style="background-color: white; position: relative;">
+                                <img [src]="product.mainImageURL" class="productImage"
+                                    [ngClass]="{'zoomed': hoveredProductId === product.productId}"
+                                    style="height: 150px; width: 100px;">
+
+                                <!-- Icon thêm vào khi hover -->
+                                <img *ngIf="hoveredProductId === product.productId" src="/cart.png"
+                                    class="onItemCartIcon menu-icon" style="position: absolute; bottom: 0; right: 0;"
+                                    (click)="cartIconClickHandler(product.productId)">
+                            </div>
+                            <div style="height: 100px;">
+                                <p class="card-text itemTitle" style="height: 40%;">{{ product.productName }}</p>
+                                <p class="card-text price" style="height: 40%;">{{ product.unitPrice | currency:
+                                    'VND' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút Previous và Next -->
+                <div class="pagination-controls">
+                    <button (click)="mainProductPreviousPage()" [disabled]="currentIndex === 0"
+                        class="navigation-buttons">
+                        <</button>
+                            <button (click)="mainProductNextPage()"
+                                [disabled]="currentIndex + itemsPerPage >= products.length"
+                                class="navigation-buttons">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

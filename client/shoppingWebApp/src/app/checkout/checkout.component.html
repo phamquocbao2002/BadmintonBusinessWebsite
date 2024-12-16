@@ -1,0 +1,83 @@
+<div class="homepage-content">
+    <div class="container my-4" id="accessoryProductsContentContainer">
+        <div class="row">
+            <div class="container cart-review-container">
+                <div id="orderInfoInputFields">
+                    <p class="sectionTitle">VUI LÒNG NHẬP CHI TIẾT CÁC THÔNG TIN BÊN DƯỚI</p>
+
+                    <label for="customerAccountName">Tài khoản khách hàng</label>
+                    <input type="text" id="customerAccountName" [(ngModel)]="orderInfo.customerAccountName"
+                        placeholder="Nhập tên tài khoản khách hàng của bạn" />
+
+                    <label for="receiverAddress">Địa chỉ người nhận</label>
+                    <input type="text" id="receiverAddress" [(ngModel)]="orderInfo.receiverAddress"
+                        placeholder="Nhập địa chỉ người nhận" />
+
+                    <label for="receiverPhoneNumber">Số điện thoại người nhận</label>
+                    <input type="text" id="receiverPhoneNumber" [(ngModel)]="orderInfo.receiverPhoneNumber"
+                        placeholder="Nhập số điện thoại người nhận" />
+
+
+                    <!-- Các trường input khác nếu có -->
+                </div>
+
+                <div id="payMethodChosenSection">
+                    <div id="reviewOrderProducts">
+                        <!-- Header row for the labels -->
+                        <p class="sectionTitle">THÔNG TIN ĐƠN ĐẶT HÀNG</p>
+                        <div class="product-lineOnCheckout header">
+                            <div class="product-nameOnCheckout">Sản phẩm</div>
+                            <div class="product-amountOnCheckout">Tạm tính</div>
+                        </div>
+
+                        <!-- Loop through the orderCheckoutProducts to display product details -->
+                        <div *ngFor="let product of orderCheckoutProducts" class="product-lineOnCheckout">
+                            <div class="product-nameOnCheckout">{{ product.productNameWithQuantity }}</div>
+                            <div class="product-amountOnCheckout">{{ product.productAmt |
+                                currency:'VND':'symbol':'1.0-0' }}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="reviewOrderTotalAmt">
+                        Tổng tiền: {{ cartTotalAmt | currency: 'VND':'symbol':'1.0-0' }}
+                    </div>
+
+                    <div id="payMethodChosen">
+                        <label>
+                            <input type="radio" name="payMethod" id="payMethod1" (change)="setPayMethod('cod')" /> Thanh
+                            toán
+                            khi
+                            nhận
+                            hàng (COD)
+                        </label>
+                        <label>
+                            <input type="radio" name="payMethod" id="payMethod2"
+                                (change)="setPayMethod('bankingTransfer')" />
+                            Thanh
+                            toán chuyển khoản ngân hàng thủ công
+                        </label>
+                        <label>
+                            <input type="radio" name="payMethod" id="payMethod3"
+                                (change)="setPayMethod('paymentQRCode')" />
+                            Thanh
+                            toán
+                            bằng mã QR đối soát tự động
+                        </label>
+
+                        <button (click)="payRequest()">TIẾN HÀNH THANH TOÁN</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="paymentSuccessModal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Thanh toán thành công!</h2>
+            </div>
+        </div>
+    </div>
+</div>
